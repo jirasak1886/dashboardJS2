@@ -1,21 +1,46 @@
-export default function ProfilePage() {
+// app/dashboard/profile/page.tsx
+import Link from 'next/link';
+
+export default function ProfileListPage() {
   return (
-    <div className="max-w-2xl mx-auto bg-white shadow-md rounded p-6 mt-5">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">👤 User Profile</h2>
-
-      <div className="space-y-2 text-gray-700">
-        <p><strong>Name:</strong> Jirasak Waennak</p>
-        <p><strong>Email:</strong> 652021044@tsu.ac.th</p>
-        <p><strong>Phone:</strong> 089-123-4567</p>
-        <p><strong>Birthday:</strong> January 1, 2000</p>
-        <p><strong>Address:</strong> 99/1 Moo 5, Muang District, Phatthalung, Thailand</p>
-      </div>
-
-      <div className="mt-6 text-right">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-          Edit Profile
-        </button>
-      </div>
+    <div className="max-w-3xl mx-auto p-8 bg-white rounded-lg shadow-md text-black">
+      <h1 className="text-4xl font-extrabold mb-8 border-b pb-4 border-gray-300">
+        User Profiles
+      </h1>
+      <ul className="space-y-4">
+        <li>
+          <Link
+            href="/dashboard/profile/user123"
+            className="flex items-center gap-3 text-blue-600 hover:text-blue-800 hover:underline transition"
+          >
+            <span className="text-xl">👤</span> View John Doe's Profile
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/dashboard/profile/jane-smith"
+            className="flex items-center gap-3 text-blue-600 hover:text-blue-800 hover:underline transition"
+          >
+            <span className="text-xl">👩‍🎨</span> View Jane Smith's Profile
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/dashboard/profile/naphat"
+            className="flex items-center gap-3 text-blue-600 hover:text-blue-800 hover:underline transition"
+          >
+            <span className="text-xl">🧑‍💻</span> View Naphat's Profile
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/dashboard/profile/invalid-id"
+            className="flex items-center gap-3 text-red-600 hover:text-red-800 hover:underline transition"
+          >
+            <span className="text-xl">❌</span> View an Invalid Profile (404)
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }
